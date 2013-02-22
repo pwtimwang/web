@@ -64,7 +64,6 @@ function wpjam_wb_like_head(){
 	{
 ?>
 <!--必填-->
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <meta property="og:type" content="webpage" />
 <meta property="og:url" content="www.pingwest.com" />
 <meta property="og:title" content="全球视野的前沿中文科技媒体" />
