@@ -1,0 +1,109 @@
+.smart-shortcode-wrapper{
+    float: left;
+    width: 100%;
+}
+.tickera_table td,
+.tickera_table tr{
+    border:none !important;
+    padding: 10px 0 !important;
+}
+
+.tickera_table td.actions{
+    border-top: 1px solid #DDDDDD !important;
+    border-bottom: 1px solid #DDDDDD !important;
+}
+
+.tickera_table th{
+    background-color: #DDDDDD;
+    padding-left: 5px;
+    margin-top: 1px;
+    font-family: 'Helvetica';
+    font-weight: bold;
+    color: #666666;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 2.6em;
+    text-transform: uppercase;
+    padding-right: 5px;
+    text-align: left;
+}
+
+.tickera_table{
+    color: #888888;
+    font-family: 'Helvetica';
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+.ticket-total{text-align: right!important;}
+
+.tickera_button{
+    -moz-transition: all 0.2s ease-in-out 0s;
+    background: -moz-linear-gradient(center top , #FEFEFE, #DDDDDD) repeat scroll 0 0 #237FD7;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    
+    color: #444444;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1em !important;
+    margin: 10px 5px 10px 0;
+    overflow: visible;
+    padding: 2px 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.tickera_table .plus,
+.tickera_table .minus{
+    float: left;
+    display: inline-block;
+    height: 27px;
+}
+.tickera_table .quantity{
+    float: left;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    margin: 10px 4px 0 0!important;
+}
+
+
+.tickera_table #submit{
+    float:right;
+    width: 20%;
+    min-width: 160px;
+}
+
+.tickera_table #coupon,
+.tickera_table .coupon{
+    float:left;
+    width: 70%;
+}
+
+ #coupon .discount_info,
+ .coupon .discount_info {
+    float: left;
+    display: inline-block;
+    font-size: 11px;
+    margin-top: 16px;
+    font-family: 'Helvetica';
+}
+
+#coupon label,
+.coupon label{
+    float: left;
+    display: inline-block;
+    margin: 15px 5px 0 0;
+}
+
+#coupon input,
+.coupon input{
+    float: left;
+    display: inline-block;
+    margin: 10px 5px 0 0;
+}

@@ -1,0 +1,100 @@
+﻿<?php
+/*
+Plugin Name: 新浪微博赞
+Plugin URI: http://blog.wpjam.com/project/wb-like/
+Description: 在 WordPress 博客中使用新浪微博赞组件。
+Version: 0.1
+Author: Denis
+*/
+
+add_action('wp_head','wpjam_wb_like_head');
+
+function wpjam_wb_like_head(){
+	global $post;
+	if(is_single()){
+?>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="<?php echo get_permalink($post->ID); ?>" />
+<meta property="og:title" content="<?php echo $post->post_title; ?>" />
+
+<meta property="og:description" content="<?php echo get_post_excerpt($post);?>" />
+
+<?php if($post_first_image = get_post_first_image($post->post_content)){?>
+<meta property="og:image" content="<?php echo $post_first_image; ?>" />
+<?php } ?>
+<meta name="weibo: article:create_at" content="<?php echo $post->post_date; ?>" />
+<meta name="weibo: article:update_at" content="<?php echo $post->post_modified; ?>" />
+       
+<?php   
+	}     
+}
+
+add_filter('language_attributes','wpjam_wb_open_graph_language_attributes');
+function wpjam_wb_open_graph_language_attributes($text){
+	if(is_single()){
+		return $text . ' xmlns:wb="http://open.weibo.com/wb"';
+	}
+}
+
+
+add_filter('the_content','wpjam_wb_like_content');
+function wpjam_wb_like_content($text){
+	if(is_single()){
+		return $text . '
+		<wb:like></wb:like>
+		';
+	}
+	return $text;
+}
+
+function wb_like(){
+?>
+<wb:like></wb:like>
+<?php 
+}
+
+function wb_praise(){
+	wb_like();
+}
+
+if(!function_exists('get_post_first_image'))
+{
+function get_post_excerpt()
+{
+	global $post;
+			$text = $post->post_content;
+
+		$text = strip_shortcodes( $text );
+
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]&gt;', $text);
+		$excerpt_length = apply_filters('excerpt_length', 55);
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+		
+		return $text;
+}
+}
+
+
+if(!function_exists('get_post_first_image'))
+	{
+
+    function get_post_first_image($post_content)
+		{
+
+        preg_match_all('|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post_content, $matches);
+
+        if($matches){      
+
+            return $matches[1][0];
+
+        }else{
+
+            return false;
+
+        }
+
+    }
+
+}
