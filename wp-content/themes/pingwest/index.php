@@ -61,6 +61,11 @@ function closeSubject()
 
 		<div id="container">
 			<div id="content" role="main">
+			
+				<div id="subject1" style="position:relative;width:700px;height:300px; margin-bottom:30px">
+					<iframe  id="IFquicknews1" style="display:none" width="100%" height="300px"  frameborder="0" scrolling="no"   src="http://news1.pingwest.com/quicknews1"  onLoad="showself();"></iframe>
+				</div>
+
 				<?php get_template_part( 'loop', 'index' ); ?>
 			</div><!-- #content -->
             <div id="side">
@@ -68,6 +73,15 @@ function closeSubject()
 	    	</div>
 		</div><!-- #container -->
 	
+<script type="text/javascript">
+function showself()
+{
+	$("#IFquicknews1").show();
+}
+</script>
+
+
+
 <?php get_footer(); ?>
 
 

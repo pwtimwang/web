@@ -66,11 +66,35 @@
     {
     "ProjRelPath" = "T"
     }
+    "event02\\index-1.html"
+    {
+    "ProjRelPath" = "T"
+    }
     "event02\\index.html"
     {
     "ProjRelPath" = "T"
     }
+    "event02\\js"
+    {
+    "ProjRelPath" = "T"
+    }
+    "event02\\js\\jquery.slideViewerPro.1.5.js"
+    {
+    "ProjRelPath" = "T"
+    }
+    "event02\\style"
+    {
+    "ProjRelPath" = "T"
+    }
     "event02\\style.css"
+    {
+    "ProjRelPath" = "T"
+    }
+    "event02\\style\\style.css"
+    {
+    "ProjRelPath" = "T"
+    }
+    "event02\\style\\svwp_style.css"
     {
     "ProjRelPath" = "T"
     }
