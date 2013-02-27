@@ -73,6 +73,8 @@ limit 0, 1";
 
 //		$query ="SELECT wp_posts.post_date, wp_postmeta.meta_value as lastsyc, wp_posts.ID FROM `wp_posts` join wp_postmeta on wp_posts.ID = wp_postmeta.post_id 
 //where wp_postmeta.meta_key = 'lastsyc'
+//AND wp_posts.post_status =  'publish'
+//AND wp_posts.post_type =  'post'
 //order by wp_postmeta.meta_value ASC
 //limit 0, 1";
 
