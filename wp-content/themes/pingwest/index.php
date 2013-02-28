@@ -8,9 +8,9 @@ function closeSubject()
 </script>
 
 
-<div id="subject" style="position:relative;width:940px;height:100px;">
-	<a style="width:940px;height:100px;" href="http://pingwest.com/giant2013/index.html">
-		<img style="width:940px;height:100px;" src="http://pingwest.com/giant2013/images/banner.png"></img>
+<div id="subject" style="position:relative;width:940px;height:130px;">
+	<a style="width:940px;height:130px;" href="http://www.pingwest.com/500-startups-2013-spring-program/">
+		<img style="width:940px;height:130px;" src="http://pingwest.com/wp-content/themes/pingwest/images/500startup.jpg"></img>
 	</a>
 	<span style="position:absolute; top:0px;right:0px; background:url(http://pingwest.com/wp-content/themes/pingwest/images/close1.gif) no-repeat;width:18px;height:18px;float:right" title="关闭" onclick="closeSubject();"></span>
 </div>
@@ -63,7 +63,7 @@ function closeSubject()
 			<div id="content" role="main">
 			
 				<div id="subject1" style="position:relative;width:700px;height:300px; margin-bottom:30px">
-					<iframe  id="IFquicknews1" style="display:none" width="100%" height="300px"  frameborder="0" scrolling="no"   src="http://news1.pingwest.com/quicknews1"  onLoad="showself();"></iframe>
+					<iframe  id="IFquicknews1" style="display:none" width="100%" height="300px"  frameborder="0" scrolling="no"   src="http://localhost/?page_id=2656"  onLoad="showself();"></iframe>
 				</div>
 
 				<?php get_template_part( 'loop', 'index' ); ?>
