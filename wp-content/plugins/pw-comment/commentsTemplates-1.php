@@ -204,8 +204,11 @@ function clickSynchro(c)
 </script>
 
 
+<!--
 <script src="<?php echo $PWPlugin_url;?>/css/comment_a.js" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $PWPlugin_url;?>/css/model3.js"></script>
+-->
+
 
 </head>
 <body>
