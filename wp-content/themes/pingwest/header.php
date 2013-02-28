@@ -89,19 +89,21 @@ $(document).ready(function() {
 		
 	});
 
+<?php if (is_home()): ?>
 	// grid
 	$('#boxes').masonry({
-		itemSelector: '.box',
-		columnWidth: 340,
-		gutterWidth: 20
+	itemSelector: '.box',
+	columnWidth: 340,
+	gutterWidth: 20
 	});
 
 	$('#related').masonry({
-		itemSelector: '.box',
-		columnWidth: 340,
-		gutterWidth: 20
+	itemSelector: '.box',
+	columnWidth: 340,
+	gutterWidth: 20
 	});
-	
+<?php endif ?>
+
 	$('.texts').live({
 		'mouseenter': function() {
 			if ($(this).height() < $(this).find('.abs').height()) {
