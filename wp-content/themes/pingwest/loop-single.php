@@ -12,11 +12,11 @@
 						<?php imbalance2_posted_in() ?>
 						<span class="main_separator">/</span>
 						<?php if ( get_comments_number() != 0 ) : ?>
-		<a href="#idenglu_comments" target="_parent"><?php printf( _n( '1条评论', '%1$s条评论', get_comments_number(), 'imbalance2' ),
+		<a href="#comments" target="_parent"><?php printf( _n( '1条评论', '%1$s条评论', get_comments_number(), 'imbalance2' ),
 							number_format_i18n( get_comments_number() )
 						); ?></a>
 	<?php else: ?>
-						<a href="#idenglu_comments" target="_parent">0条评论</a>
+						<a href="#comments" target="_parent">0条评论</a>
 	<?php endif ?>
 		</div><!-- .entry-meta -->
 	

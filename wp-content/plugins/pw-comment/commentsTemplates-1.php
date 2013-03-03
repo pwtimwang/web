@@ -78,7 +78,7 @@ function publish(c){
 function buildCommentHTML(commentID){
 	usrurl = usrInfo.id? 'http://weibo.com/' + usrInfo.id : "";
 	
-	return '<div id="c-' + commentID + '" class="dl_post" style="display:none"><div class="dl_post_main"><div class="dl_post_avatar"><img alt="" src="'+
+	return '<div id="comment-' + commentID + '" class="dl_post" style="display:none"><div class="dl_post_main"><div class="dl_post_avatar"><img alt="" src="'+
 			usrInfo.profile_image_url + '" class="avatar avatar-96 photo avatar-default" height="96" width="96"></div>' + 
 			'<div class="dl_post_body"><div class="dl_post_name"><div class="dl_name"><a class="dl_name_text" rel="nofollow" target="_blank" href="' + usrurl + '">' + 
 			usrInfo.screen_name + '</a>'+
@@ -133,13 +133,13 @@ function newcomment(sinaid)
 			commentHTML = buildCommentHTML(result);	
 			if(currentParentComment == 0)
 			{
-				if($('#idenglu_comments .dl_post:first').length)
+				if($('#comments .dl_post:first').length)
 				{
-					$('#idenglu_comments .dl_post:first').before(commentHTML);
+					$('#comments .dl_post:first').before(commentHTML);
 				}
 				else
 				{
-					$('#idenglu_comments')[0].innerHTML = commentHTML;
+					$('#comments')[0].innerHTML = commentHTML;
 				}
 			}
 			else
@@ -152,10 +152,10 @@ function newcomment(sinaid)
 				{
 					$('#idenglu_replys_' + currentParentComment)[0].innerHTML = commentHTML;
 				}
-				$('#c-' + result).attr('class', 'dl_relay_row');
+				$('#comment-' + result).attr('class', 'dl_relay_row');
 			}
 			
-			$('#c-' + result).slideDown();
+			$('#comment-' + result).slideDown();
 			$('#response').slideUp();
 			
 			result = 0;	
@@ -172,7 +172,7 @@ function moveForm1(tag,commentID)
 	if(currentParentComment!=commentID)
 	{
 		$("#response").slideUp('fast',function(){
-		$("#c-"+commentID).after($("#response"));
+		$("#comment-"+commentID).after($("#response"));
 		$("#response").slideDown();});
 		currentParentComment = commentID;
 		
@@ -266,7 +266,7 @@ function clickSynchro(c)
 	</div>
 	<!--评论列表信息部分 包括信息、排序、分页等 end-->
 	<!--评论列表 begin-->
-	<div id="idenglu_comments" class="dl_list">
+	<div id="comments" class="dl_list">
 	
 <?php 
 global $post;
@@ -300,7 +300,7 @@ function outputcomment($Allcomments, $tt, $styleClass)
 	global $comment;
 	$comment = $tt;
 ?>
-	<div id="c-<?php echo $tt->comment_ID; ?>" class="<?php echo $styleClass; ?>">
+	<div id="comment-<?php echo $tt->comment_ID; ?>" class="<?php echo $styleClass; ?>">
 		<div class="dl_post_main">
 			<div class="dl_post_avatar">
 				<?php echo get_avatar($tt); ?>
