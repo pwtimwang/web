@@ -438,3 +438,14 @@ test;
 	
 }
 
+
+if ( !function_exists( 'handlelink' ) ) {
+	function handlelink( $content ) {
+		//echo $content;
+		$content = str_replace("<a ", '<a target="_parent" ', $content);
+		return $content;
+	}
+	
+	add_filter( 'wp_nav_menu_items', 'handlelink' );
+}
+
