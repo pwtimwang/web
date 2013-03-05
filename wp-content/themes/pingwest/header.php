@@ -89,7 +89,7 @@ $(document).ready(function() {
 		
 	});
 
-<?php if (is_home()): ?>
+<?php if (!is_singular()): ?>
 	// grid
 	$('#boxes').masonry({
 	itemSelector: '.box',
