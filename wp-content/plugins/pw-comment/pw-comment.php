@@ -44,7 +44,7 @@ add_action('wp_head','wpjam_wb_like_head');
 
 function wpjam_wb_like_head(){
 	global $post;
-	if(is_single()){
+	if(is_single()|| is_page()){
 ?>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=761238391" type="text/javascript" charset="utf-8"></script>
 <meta property="og:type" content="article" />
