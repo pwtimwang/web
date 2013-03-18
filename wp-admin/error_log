@@ -1,4 +1,0 @@
-[19-Sep-2012 04:58:54] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty in /home2/pingwest/public_html/wp-content/plugins/useful-banner-manager/useful-banner-manager.php on line 175
-[24-Sep-2012 15:26:40] PHP Warning:  file_get_contents(http:) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in /home2/pingwest/public_html/wp-includes/class-feed.php on line 88
-[05-Oct-2012 20:58:13] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty in /home2/pingwest/public_html/wp-content/plugins/useful-banner-manager/useful-banner-manager.php on line 175
-[30-Oct-2012 16:37:46] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/pingwest/public_html/wp-includes/cache.php on line 402
