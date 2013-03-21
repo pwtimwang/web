@@ -357,7 +357,6 @@ class hacklogra
 				add_filter('attachment_link', array(__CLASS__, 'replace_baseurl'), -999);
 				//生成缩略图后立即上传生成的文件并删除本地文件,this must after watermark generate
 				add_filter('wp_generate_attachment_metadata', array(__CLASS__, 'upload_images'), 999);
-				
 				//删除远程附件
 				add_action('wp_delete_file', array(__CLASS__, 'delete_remote_file'));
 				break;
@@ -995,6 +994,8 @@ class hacklogra
 		if(is_single())
 		{
 			$html = str_replace(self::$local_baseurl, self::$remote_baseurl, $html);
+			
+			//$html = str_replace('http://cdn.pingwest.com/main/wp-content/uploads', 'http://www.pingwest.com/wp-content/uploads', $html);
 		}
 		return $html;
 	}
