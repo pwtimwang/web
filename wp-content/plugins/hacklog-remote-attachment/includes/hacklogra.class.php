@@ -353,6 +353,7 @@ class hacklogra
 				break;
 			default:
 				add_filter('wp_handle_upload', array(__CLASS__, 'upload_and_send'));
+				
 				add_filter('media_send_to_editor', array(__CLASS__, 'replace_attachurl'), -999);
 				add_filter('attachment_link', array(__CLASS__, 'replace_baseurl'), -999);
 				//生成缩略图后立即上传生成的文件并删除本地文件,this must after watermark generate
@@ -461,7 +462,11 @@ class hacklogra
 	 */
 	public static function replace_attachurl($html)
 	{
-		$html = str_replace(self::$local_url, self::$remote_url, $html);
+		$current_page = basename($_SERVER['SCRIPT_FILENAME']);
+		if(($current_page!='post-new.php') &&($current_page != 'post.php') &&($current_page != 'admin-ajax.php'))
+		{
+			$html = str_replace(self::$local_url, self::$remote_url, $html);
+		}
 		return $html;
 	}
 
@@ -473,7 +478,11 @@ class hacklogra
 	 */
 	public static function replace_baseurl($html)
 	{
-		$html = str_replace(self::$local_baseurl, self::$remote_baseurl, $html);
+		$current_page = basename($_SERVER['SCRIPT_FILENAME']);
+		if(($current_page != 'post-new.php') &&($current_page != 'post.php') &&($current_page != 'admin-ajax.php') )
+		{	
+			$html = str_replace(self::$local_baseurl, self::$remote_baseurl, $html);
+		}
 		return $html;
 	}
 
